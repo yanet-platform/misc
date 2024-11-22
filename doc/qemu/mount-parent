@@ -1,0 +1,22 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides: mount-parent
+# Required-Start:
+# Required-Stop:
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Mount parent dir to /mnt
+# Description: Mount parent dir to /mnt
+### END INIT INFO
+
+
+#set -e
+#. /lib/lsb/init-functions
+
+case "$1" in
+	start|reload|restart|force-reload)
+		mount -t 9p -o trans=virtio host0 /mnt
+	;;
+	stop|status)
+	;;
+esac

@@ -1,0 +1,1 @@
+host0 /mnt 9p trans=virtio,rw 0 0
